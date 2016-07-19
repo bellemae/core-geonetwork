@@ -256,7 +256,7 @@ GeoNetwork.searchApp = function() {
 
             var hitsPerPage = new Ext.form.TextField({
                 name : 'E_hitsperpage',
-                hidden : true,
+                fieldLabel: OpenLayers.i18n('hitsPerPage'),
 								value: GeoNetwork.Settings.HITSPERPAGE
             });
 						var serviceTypeField = GeoNetwork.util.INSPIRESearchFormTools
