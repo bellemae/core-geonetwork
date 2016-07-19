@@ -282,6 +282,19 @@ GeoNetwork.HTML5UI.Templates.CHANGE_DATE =
         <div> {[OpenLayers.i18n("lastUpdate")]} {[values.changedate.split(\'T\')[0]]}</div>\
     </tpl>';
 
+
+/**
+ * Shows about info.
+ */
+GeoNetwork.HTML5UI.Templates.ABOUT =
+    '<div class="md-about">\
+        <tpl if="this.isAdmin()">\
+            <b>Owner: </b> {[values.ownername]}<br />\
+        </tpl>\
+        <b>{[OpenLayers.i18n("lastUpdate")]}</b> {[values.changedate.split(\'T\')[0]]}<br />\
+        <b>Schema:</b> {[values.schema]}\
+    </div>';
+
 /**
  * Shows contact info.
  */
@@ -450,53 +463,44 @@ GeoNetwork.HTML5UI.Templates.THUMBNAIL_SIMPLER = new Ext.XTemplate(
 GeoNetwork.HTML5UI.Templates.FULL = new Ext.XTemplate(
     '<ul>',
     '<tpl for=".">',
-    '<li class="md md-full" style="{featurecolorCSS}">',
-    '<table>\
+    '<li class="md md-full" style="{featurecolorCSS} padding-left: 10px" >',
+    '<table style="width:100%;">\
         <tr>',
-            '<td class="left">',
-            GeoNetwork.HTML5UI.Templates.LOGO,
-            '</td>',
-            '<td id="{uuid}" style="width:80%;">',
-                GeoNetwork.HTML5UI.Templates.TITLE,
+        '<td rowspan="2"></td>',
+            '<td id="{uuid}" colspan="2">',
+                 GeoNetwork.HTML5UI.Templates.TITLE,
+                 '<p class="abstract">\
+                    <tpl if="values.abstract.length &gt;350">\
+                        {[values.abstract.substring(0, 350)]}...\
+                    </tpl>\
+                    <tpl if="values.abstract.length &lt;= 350">\
+                        {values.abstract}\
+                    </tpl>\
+                 </p>',    // FIXME : 250 as parameters
+                 GeoNetwork.HTML5UI.Templates.SUBJECT,
+             '</td>',
+         '</tr>',
+        '<tr>',
+             '<td>',
                 '<p class="abstract">\
-                <tpl if="values.abstract.length &gt;350">\
-                {[values.abstract.substring(0, 350)]}...\
-                </tpl>\
-                <tpl if="values.abstract.length &lt;= 350">\
-                {values.abstract}\
-                </tpl>\
-                </p>',    // FIXME : 250 as parameters
-                GeoNetwork.HTML5UI.Templates.SUBJECT,
-								'<p class="abstract">\
-								<tpl if="this.isIdentified() && !(this.statusUnknown(values.status))">\
-									<b>Status:</b> {[this.getStatusText(values.status)]} <i class="status {[this.getStatusText(values.status)]} {[this.getStatusStyle(values.status)]}"></i>\
-								</tpl>\
-								</p>',
-								'<p class="abstract">\
-								<tpl if="!(this.eCatIdEmpty(values.eCatId))">\
-									<b>eCatId: </b> {[this.getECatId(values.eCatId)]}\
-								</tpl>\
-								</p>',
-            '</td>\
-            <td class="thumb">',
-                GeoNetwork.HTML5UI.Templates.RATING_TPL,
-                GeoNetwork.HTML5UI.Templates.THUMB,
-                GeoNetwork.HTML5UI.Templates.CONTACT_INFO,
+                    <tpl if="this.isIdentified() && !(this.statusUnknown(values.status))">\
+                        <b>Status:</b> {[this.getStatusText(values.status)]} <i class="status {[this.getStatusText(values.status)]} {[this.getStatusStyle(values.status)]}"></i>\
+                   </tpl>\
+                </p>',
+                '<p class="abstract">\
+                    <tpl if="!(this.eCatIdEmpty(values.eCatId))">\
+                        <b>eCatId: </b> {[this.getECatId(values.eCatId)]}\
+                    </tpl>\
+                </p>',
+                GeoNetwork.HTML5UI.Templates.COPYTOCLIPBOARD,
+                GeoNetwork.HTML5UI.Templates.LINKCONTAINER,
+                GeoNetwork.HTML5UI.Templates.VALID,
+             '</td>',
+            '<td style="vertical-align:bottom; padding-bottom:10px; "> ',
+                GeoNetwork.HTML5UI.Templates.ABOUT,
             '</td>',
-            GeoNetwork.HTML5UI.Templates.CATEGORIES,
-        '</tr>',
-    '</table>',
-    '<table><tr>',
-            '<td>',
-            GeoNetwork.HTML5UI.Templates.COPYTOCLIPBOARD,
-            '</td>',
-            '<td class="icon" colspan="2">',
-            GeoNetwork.HTML5UI.Templates.LINKCONTAINER,
-            GeoNetwork.HTML5UI.Templates.VALID,
-            '</td>',
-        '</tr>',
-    '</table>',
-		'<span style="float:right;margin-right: 5px;"><b>Schema:</b> {[values.schema]}</span>',
+         '</tr>',
+     '</table>',
     '</li>',
     '</tpl>',
     '</ul>',

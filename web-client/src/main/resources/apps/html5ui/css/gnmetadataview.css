@@ -257,6 +257,14 @@ Display hyperlink as text next to element
 .md-view ul li.md-full div,.md-view ul li.md-simple div {
 	padding-left: 1px;
 }
+
+.md-about {
+	padding-right: 10px; 
+	text-align:right; 
+	font-size:11px; 
+	font-style:italic;
+}
+
 /* Icons */
 .md-mn {
 	background-repeat: no-repeat;

@@ -173,7 +173,8 @@ GeoNetwork.searchApp = function() {
                 name : 'O_dynamic',
                 id : 'o_dynamic',
                 boxLabel : OpenLayers.i18n('Online data'),
-                renderTo : "ck1"
+                renderTo : "ck1",
+				hidden : true
             });
 
             onlineData_.on("check", function(el) {
