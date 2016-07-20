@@ -74,14 +74,7 @@ GeoNetwork.BreadCrumb = function() {
          * @returns
          */
         setDefaultPrevious : function(index) {
-            var i = 0;
-            var prev = [];
-
-            while (i < index && i < this.defaultSteps.length) {
-                prev.push(this.defaultSteps[i]);
-                i++;
-            }
-            this.previous = prev;
+            this.previous = this.defaultSteps[index];
             this.current = null;
         },
 
@@ -93,7 +86,7 @@ GeoNetwork.BreadCrumb = function() {
             var separator = this.separator;
 
             if (this.previous.length == 0) {
-                Ext.get(this.div).update('');
+                Ext.get(this.div).update('<br />');
                 return;
             }
 

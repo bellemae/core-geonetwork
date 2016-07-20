@@ -163,7 +163,7 @@ function showSearch() {
 		show("bread-crumb-div");
 		show("bread-crumb-app");
 
-    app.breadcrumb.setDefaultPrevious(1);
+    app.breadcrumb.setPrevious([]);
     app.breadcrumb.setCurrent(app.breadcrumb.defaultSteps[1]);
 
     if (!app.searchApp.firstSearch) {
@@ -202,7 +202,7 @@ function showMetadata() {
     show("metadata-container");
 		show("bread-crumb-app");
 
-    app.breadcrumb.setDefaultPrevious(2);
+    app.breadcrumb.setDefaultPrevious(1);
 
     Ext.each(Ext.query('a', Ext.get("main-navigation").dom), function(a) {
         Ext.get(a).removeClass("selected");

@@ -243,7 +243,7 @@ GeoNetwork.app = function() {
 				});
 
         showMetadata();
-        app.breadcrumb.setDefaultPrevious(2);
+        app.breadcrumb.setDefaultPrevious(1);
         app.breadcrumb.setCurrent({
             text : record.get('title'),
             func : "app.searchApp.addMetadata('" + uuid + "', true)"
