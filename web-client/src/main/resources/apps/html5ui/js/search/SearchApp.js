@@ -357,19 +357,19 @@ GeoNetwork.searchApp = function() {
 
             var formItems = [];
 
-            var marlinFields = MarLIN.SearchFormTools.getFields
-                                (catalogue.services, true);
+            /*var marlinFields = MarLIN.SearchFormTools.getFields
+                                (catalogue.services, true);*/
             formItems.push({
                 id : 'advSearchTabs',
                 plain: true,
                 items:[
                    // MarLIN panel
-                   {
+                  /* {
                       margins:'5 5 5 5',
                       layout:'form',
                       autoHeight: true,
                       items: marlinFields
-                   },
+                   },*/
                    // Standard Advanced panel
                    {
                       plain: true,
