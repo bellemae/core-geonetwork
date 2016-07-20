@@ -234,8 +234,10 @@ GeoNetwork.searchApp = function() {
 
             var idField = GeoNetwork.util.SearchFormTools.getIdField();
             var authorField = GeoNetwork.util.SearchFormTools.getAuthorField();
+            /*
         		var catalogueField = GeoNetwork.util.SearchFormTools.getCatalogueField(
                 		catalogue.services.getSources, catalogue.services.logoUrl, true);
+            */
         		var groupField = GeoNetwork.util.SearchFormTools.getGroupField(
                 		catalogue.services.getGroups, true);
         		var ownerGroupField = GeoNetwork.util.SearchFormTools.getOwnerGroupField(
@@ -249,11 +251,12 @@ GeoNetwork.searchApp = function() {
         		var categoryField = GeoNetwork.util.SearchFormTools.getCategoryField(
                 		catalogue.services.getCategories, '../../apps/images/default/category/', true);
         		var validField = GeoNetwork.util.SearchFormTools.getValidField(true);
+                /*
         		var spatialTypes = GeoNetwork.util.SearchFormTools
                 		.getSpatialRepresentationTypeField(null, true);
         		var denominatorField = GeoNetwork.util.SearchFormTools
                 		.getScaleDenominatorField(true);
-
+                */
             var hitsPerPage = new Ext.form.TextField({
                 name : 'E_hitsperpage',
                 fieldLabel: OpenLayers.i18n('hitsPerPage'),
@@ -264,9 +267,7 @@ GeoNetwork.searchApp = function() {
 
             advancedCriteria.push(
 										idField, authorField, categoryField, statusField, groupField, ownedByField,
-										ownerGroupField, metadataTypeField, catalogueField,
-										validField, spatialTypes, denominatorField,
-                    ownerField, hitsPerPage);
+										ownerGroupField, metadataTypeField, validField, ownerField, hitsPerPage);
 
             var sortByCombo = new Ext.form.TextField({
                 name : 'E_sortBy',
