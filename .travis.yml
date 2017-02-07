@@ -16,4 +16,4 @@ addons:
   artifacts:
     s3_region: "ap-southeast-2"
     paths:
-      - $HOME/build/*/core-geonetwork/web/target/geonetwork.war
+      - $TRAVIS_BUILD_DIR/core-geonetwork/web/target/geonetwork.war
