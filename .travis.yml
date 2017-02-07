@@ -1,11 +1,6 @@
 language: java
 
 script: mvn install -DskipTests=true
-env:
-  global:
-  - ARTIFACTS_KEY = $DEV_AWS_ACCESS_KEY
-  - ARTIFACTS_SECRET = $DEV_AWS_SECRET_KEY
-  - ARTIFACTS_BUCKET = ecat-data
 
 #deploy:
 #  provider: s3
