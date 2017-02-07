@@ -4,8 +4,8 @@ script: mvn install -DskipTests=true
 
 deploy:
   provider: s3
-  access_key_id: DEV_AWS_ACCESS_KEY
-  secret_access_key: DEV_AWS_SECRET_KEY
+  access_key_id: $DEV_AWS_ACCESS_KEY
+  secret_access_key: $DEV_AWS_SECRET_KEY
   skip_cleanup: "true"
-  bucket: S3_BUCKET
+  bucket: $S3_BUCKET
   
