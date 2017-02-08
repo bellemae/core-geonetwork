@@ -1,18 +1,11 @@
 language: java
 
 script: mvn install -DskipTests=true
-
-env:
-  - if [ $TRAVIS_BRANCH == 'DEV' ]; then
-      ARTIFACTS_BUCKET=$DEV_ARTIFACTS_BUCKET \
-      ARTIFACTS_KEY=$DEV_ARTIFACTS_KEY \
-      ARTIFACTS_SECRET=$DEV_ARTIFACTS_SECRET;
-    fi
-    
+   
 addons:
   artifacts:
     s3_region: "ap-southeast-2"
     paths:
       - $TRAVIS_BUILD_DIR/web/target/geonetwork.war
-    target_paths: war
+    target_paths: $TRAVIS_BRANCH
 
