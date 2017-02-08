@@ -1,6 +1,9 @@
 language: java
 
-#script: mvn install -DskipTests=true
+script: mvn install -DskipTests=true
+
+env:
+  - ARTIFACTS_KEY=$DEV_ARTIFACTS_KEY ARTIFACTS_SECRET=$DEV_ARTIFACTS_SECRET ARTIFACTS_BUCKET=$DEV_ARTIFACTS_BUCKET
 
 addons:
   artifacts:
