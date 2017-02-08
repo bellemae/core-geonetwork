@@ -2,18 +2,10 @@ language: java
 
 script: mvn install -DskipTests=true
 
-
-#deploy:
-#  provider: s3
-#  access_key_id: $DEV_AWS_ACCESS_KEY
-#  secret_access_key: $DEV_AWS_SECRET_KEY
-#  skip_cleanup: "true"
-#  bucket: ecat-data
-#  local_dir: "web/target/geonetwork.war"
-
-
 addons:
   artifacts:
     s3_region: "ap-southeast-2"
     paths:
       - $TRAVIS_BUILD_DIR/web/target/geonetwork.war
+    target_paths: war
+
