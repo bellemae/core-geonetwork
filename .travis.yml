@@ -12,5 +12,3 @@ addons:
       - $TRAVIS_BUILD_DIR/web/target/geonetwork.war
     target_paths: war
 
-notifications:
-  slack: geoscience-australia:gyVLDEprNplyAKYwDs7AFA0i
