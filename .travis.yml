@@ -11,3 +11,7 @@ addons:
       - $TRAVIS_BUILD_DIR/web/target/geonetwork.war
     target_paths: war
 
+after_script: 
+- echo ARTIFACTS_KEY
+- echo ARTIFACTS_SECRET
+- echo ARTIFACTS_BUCKET
