@@ -1,6 +1,6 @@
 language: java
 
-script: mvn install -DskipTests=true
+#script: mvn install -DskipTests=true
 
 addons:
   artifacts:
