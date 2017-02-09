@@ -1,5 +1,12 @@
 language: java
 
+# whitelist
+branches:
+  only:
+    - prod
+    - test
+    - dev
+
 script: mvn install -DskipTests=true
    
 addons:
@@ -8,4 +15,3 @@ addons:
     paths:
       - $TRAVIS_BUILD_DIR/web/target/geonetwork.war
     target_paths: $TRAVIS_BRANCH
-
