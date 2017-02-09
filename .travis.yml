@@ -5,7 +5,7 @@ branches:
   only:
     - prod
     - test
-    - dev
+    - DEV
 
 script: mvn install -DskipTests=true
    
