@@ -5,13 +5,21 @@ branches:
   only:
     - prod
     - test
-    - dev
+    - DEV
 
 script: mvn install -DskipTests=true
-   
+
+env:
+  - eval ARTIFACTS_KEY=\$${TRAVIS_BRANCH}_ARTIFACTS_KEY; eval ARTIFACTS_SECRET=\$${TRAVIS_BRANCH}_ARTIFACTS_SECRET; eval ARTIFACTS_BUCKET=\$${TRAVIS_BRANCH}_ARTIFACTS_BUCKET
+
 addons:
   artifacts:
     s3_region: "ap-southeast-2"
     paths:
       - $TRAVIS_BUILD_DIR/web/target/geonetwork.war
     target_paths: $TRAVIS_BRANCH
+
+# test results
+echo "key=$ARTIFACTS_KEY"
+echo "secret=$ARTIFACTS_SECRET"
+echo "bucket=$ARTIFACTS_BUCKET"
