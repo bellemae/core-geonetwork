@@ -1,16 +1,26 @@
 language: java
 
-script: mvn install -DskipTests=true
+# whitelist
+branches:
+  only:
+    - prod
+    - test
+    - /^dev-.*$/ # any dev branch
 
-env:
-  - ARTIFACTS_KEY="${{$TRAVIS_BRANCH}}_ARTIFACTS_KEY" ARTIFACTS_SECRET="${{$TRAVIS_BRANCH}}_ARTIFACTS_SECRET" ARTIFACTS_BUCKET="${{$TRAVIS_BRANCH}}_ARTIFACTS_BUCKET"
+if [[ $TRAVIS_BRANCH =~ [/^dev-.*$/] ]]
+  BRANCH="DEV"
+else
+  BRANCH=$TRAVIS_BRANCH
+fi
+
+script: mvn install -DskipTests=true
 
 addons:
   artifacts:
     s3_region: "ap-southeast-2"
     paths:
       - $TRAVIS_BUILD_DIR/web/target/geonetwork.war
-    target_paths: war
+    target_paths: BRANCH
 
 notifications:
   slack: geoscience-australia:gyVLDEprNplyAKYwDs7AFA0i
