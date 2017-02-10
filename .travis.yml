@@ -13,8 +13,7 @@ script:
     else
     export BRANCH=$TRAVIS_BRANCH;
     fi
-
-script: mvn install -DskipTests=true
+  - mvn install -DskipTests=true
 
 addons:
   artifacts:
