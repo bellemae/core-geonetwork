@@ -21,7 +21,7 @@ addons:
     s3_region: "ap-southeast-2"
     paths:
       - $TRAVIS_BUILD_DIR/web/target/geonetwork.war
-    target_paths: BRANCH
+    target_paths: $BRANCH
 
 notifications:
   slack: geoscience-australia:gyVLDEprNplyAKYwDs7AFA0i
