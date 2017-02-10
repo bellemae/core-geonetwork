@@ -7,7 +7,7 @@ branches:
     - test
     - /^dev-.*$/ # any dev branch
 
-if [[ $TRAVIS_BRANCH =~ [/^dev-.*$/] ]]
+if [[ $TRAVIS_BRANCH =~ [/^dev-.*$/] ]];then
   BRANCH="DEV"
 else
   BRANCH=$TRAVIS_BRANCH
