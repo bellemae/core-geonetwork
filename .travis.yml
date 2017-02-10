@@ -10,11 +10,10 @@ branches:
 script:
   - if [[ $TRAVIS_BRANCH =~ [/^dev-.*$/] ]];then
     export BRANCH="DEV";
-    echo "branch - $BRANCH";
     else
     export BRANCH=$TRAVIS_BRANCH;
-    echo "branch - $BRANCH";    
     fi
+  - echo "branch - $BRANCH"
   - mvn install -DskipTests=true
 
 addons:
