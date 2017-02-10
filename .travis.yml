@@ -9,9 +9,9 @@ branches:
 
 script:
   - if [[ $TRAVIS_BRANCH =~ [/^dev-.*$/] ]];then
-    BRANCH="DEV";
+    export BRANCH="DEV";
     else
-    BRANCH=$TRAVIS_BRANCH;
+    export BRANCH=$TRAVIS_BRANCH;
     fi
 
 script: mvn install -DskipTests=true
