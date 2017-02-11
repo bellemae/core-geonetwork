@@ -11,7 +11,7 @@ script:
   - if [[ $TRAVIS_BRANCH =~ ^dev-.*$ ]];then
     export BRANCH="DEV";
     else
-    export BRANCH=WHY;
+    export BRANCH=$TRAVIS_BRANCH;
     fi
   - mvn install -DskipTests=true
 
