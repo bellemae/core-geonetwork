@@ -8,7 +8,7 @@ branches:
     - /^dev-.*$/ # any dev branch
 
 script:
-  - if [[ $TRAVIS_BRANCH =~ [/^dev-.*$/] ]];then
+  - if [[ $TRAVIS_BRANCH =~ ^dev-.*$ ]];then
     export BRANCH="DEV";
     else
     export BRANCH=WHY;
