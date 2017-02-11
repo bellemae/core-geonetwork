@@ -13,7 +13,6 @@ script:
     else
     export BRANCH=WHY;
     fi
-  - echo "branch - $BRANCH"
   - mvn install -DskipTests=true
 
 addons:
