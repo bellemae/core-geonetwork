@@ -14,7 +14,7 @@ script:
     export BRANCH=WHY;
     fi
   - echo "branch - $BRANCH"
-  #- mvn install -DskipTests=true
+  - mvn install -DskipTests=true
 
 addons:
   artifacts:
