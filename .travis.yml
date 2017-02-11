@@ -8,11 +8,11 @@ branches:
     - /^dev-.*$/ # any dev branch
 
 script:
-  - if [[ $TRAVIS_BRANCH =~ [/^dev-.*$/] ]];then
-    export BRANCH="DEV";
-    else
-    export BRANCH=$TRAVIS_BRANCH;
-    fi
+#  - if [[ $TRAVIS_BRANCH =~ [/^dev-.*$/] ]];then
+#    export BRANCH="DEV";
+#    else
+#    export BRANCH=$TRAVIS_BRANCH;
+#    fi
   - echo "branch - $BRANCH"
   #- mvn install -DskipTests=true
 
