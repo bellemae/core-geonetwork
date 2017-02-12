@@ -9,7 +9,7 @@ branches:
 
 script:
   - if [[ $TRAVIS_BRANCH =~ ^dev-.*$ ]];then
-    export BRANCH="DEV";
+    export BRANCH="dev";
     else
     export BRANCH=$TRAVIS_BRANCH;
     fi
